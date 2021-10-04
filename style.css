@@ -1,6 +1,11 @@
 body{
+    border-style: solid;
+    border-width: 10px;
+    border-color: #54381e;
     display: grid;
     margin: auto;
+    margin-top: 15px;
+    padding: 30px;
     max-width: 900px;
     text-align: center;
     background-color: antiquewhite;
@@ -76,6 +81,6 @@ div {
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 15vh;
+    height: 10vh;
     justify-content:flex-end;
 }
