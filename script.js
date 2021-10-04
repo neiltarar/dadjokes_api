@@ -3,7 +3,7 @@ const jokeSection = document.querySelector('.joke')
 const radioButton = document.querySelectorAll("input")
 let jokeType = ""
 function randomJoke() {
-    
+    jokeSection.textContent = "loading ...";
     radioButton.forEach((radio) => {
         radio.addEventListener('change', (event)=>{
            jokeType = radio.value
