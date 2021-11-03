@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import usePromiseTracker from 'react-promise-tracker';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Demo2 from './componants/heading';
+import Main from './componants/heading';
 
-ReactDOM.render(<Demo2/> , document.getElementById("root"));
+ReactDOM.render(
+    <Main />, 
+    document.getElementById("root"));
 reportWebVitals();
