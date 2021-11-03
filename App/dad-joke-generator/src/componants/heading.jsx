@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+const axios = require('axios').default;
 
 class Demo2 extends Component {
     constructor() {
@@ -10,15 +11,28 @@ class Demo2 extends Component {
         this.formSubmit = this.formSubmit.bind(this);
     }
 
+    getJokes() {
+        // axios.get(`https://v2.jokeapi.dev/joke/${this.state.selectedOption}?blacklistFlags=nsfw&format=txt`)
+        //     .then((response) => {
+        //         let result = (response.data)
+        //         console.log(result)
+        //     });
+    };
+
     onValueChange(event) {
         this.setState({
             selectedOption: event.target.value
         });
-    }
+    };
 
     formSubmit(event) {
         event.preventDefault();
-        console.log(this.state.selectedOption)
+        axios.get(`https://v2.jokeapi.dev/joke/${this.state.selectedOption}?blacklistFlags=nsfw&format=txt`)
+            .then((response) => {
+                const joke = (response.data)
+                console.log(joke)
+                this.setState({ joke });
+            });
     }
 
     render() {
@@ -69,7 +83,7 @@ class Demo2 extends Component {
                     </label>
                 </div>
                 <div>
-                    Selected option is : {this.state.selectedOption}
+                    Selected option is : {this.state.joke}
                 </div>
                 <button className="btn btn-default" type="submit">
                     Submit
