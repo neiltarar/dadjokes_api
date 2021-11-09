@@ -6,7 +6,8 @@ class main extends Component {
     constructor() {
         super();
         this.state = {
-            name: "React"
+            name: "React",
+
         };
         this.onValueChange = this.onValueChange.bind(this);
         this.formSubmit = this.formSubmit.bind(this);
@@ -19,11 +20,11 @@ class main extends Component {
     };
 
     onClick = () => {
+        document.getElementById("joke").innerText = "loading...";
         this.setState({ loading: true }, () => {
             Axios.get(`https://v2.jokeapi.dev/joke/${this.state.selectedOption}?blacklistFlags=nsfw&format=txt`)
                 .then((response) => {
                     const joke = (response.data);
-                    console.log(joke);
                     this.setState({ joke });
                 });
         });
@@ -102,9 +103,19 @@ class main extends Component {
                         <img src={mainImage} alt="" />
                     </div>
                     <br />
-                    <div>
+                    <div id="joke">
                         {this.state.joke}
                     </div>
+                </div>
+                <div>
+                    <a href="https://neil-tarar.com"> neil-tarar.com</a>
+                </div>
+                <br />
+                <div>
+                    <a href="https://github.com/aniltarar/dadjokes_api/tree/reactVersion">GitHub</a>
+                </div>
+                <div>
+                    API: <a href="https://sv443.net/jokeapi/v2/">https://sv443.net/jokeapi/v2/</a>
                 </div>
             </React.Fragment>
         );
