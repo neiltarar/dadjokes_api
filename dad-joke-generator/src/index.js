@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import Header from "./components/header";
 import Buttons from "./components/buttons";
 
-ReactDOM.render(<Header />, document.getElementById("header"));
-ReactDOM.render(<Buttons />, document.getElementById("buttons"));
+ReactDOM.render(<Header />, document.getElementById("heading"));
+ReactDOM.render(<Buttons />, document.getElementById("main"));
 
 reportWebVitals();

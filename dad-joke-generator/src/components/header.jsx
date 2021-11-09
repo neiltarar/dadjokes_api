@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import DadJokeMeme from "../images/dadJokes_background.jpg";
-class header extends React.Component {
+class header extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="d-grid col-3 mx-auto">
+        <div>
           <h1>Dad Joke Generator</h1>
-          <div>
-            <img className="d-grid col-12 mx-auto" src={DadJokeMeme} alt="" />
-          </div>
+        </div>
+        <div id="background-img">
+          <img
+            className="main"
+            src={DadJokeMeme}
+            alt="Dad making a dad-joke and his family is face palming"
+          />
         </div>
       </React.Fragment>
     );
